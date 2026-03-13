@@ -27,37 +27,29 @@
 </head>
 
 <body>
-    @if (session('success'))
-        <div class="toast-container position-fixed top-0 inset-e-0 p-3">
-            <div class="toast show align-items-center text-bg-success border-0" role="status" aria-live="polite"
-                aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ session('success') }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-    @endif
+   
 
-    <div class="w-100 bg-white border-bottom py-3 mb-5">
+    <div class="w-100 bg-gray-100 border-bottom py-3 mb-5">
         <div class="container-fluid">
 
-            <h1 class="fs-5 fw-bold m-3"> Character Dictionary</h1>
+            <h1 class="fs-2 fw-semibold m-2"> Character Dictionary</h1>
 
         </div>
     </div>
 
     <div class="container">
-        <div class="d-flex justify-content-start m-5">
+         @if (session('success'))
+       <div class="alert alert-success">
+          {{ session('success') }}
+       </div>
+    @endif
+        <div class="d-flex justify-content-start mx-5 mt-5">
             <div>
                 <h1 class="fw-bold">Characters</h1>
             </div>
         </div>
 
-        <div class="m-5">
+        <div class="mx-5 mt-0">
 
             <a href="{{ route('create') }}" class="btn btn-outline-secondary"><i class="bi bi-plus-circle"></i> Create
                 Character</a>
@@ -70,7 +62,7 @@
             <p class="m-5">No characters found.</p>
         @else
             @foreach ($characters as $character)
-                <div class="card m-5">
+                <div class="card mx-5  m-3">
                     <div class="card-body d-flex justify-content-between align-items-start">
                         <div>
                             <h2 class="h3 fw-bold mb-2">{{ $character->name }}</h2>

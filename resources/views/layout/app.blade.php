@@ -7,6 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -19,10 +20,20 @@
         @endif
     </head>
     <body >
-       <div class="container-fluid mt-3">
-        <h1 class="fw-semibold display-5 text-center">Characters</h1>
-       </div> 
 
-    @yield('content')
+    <div class="w-100 bg-gray-100 border-bottom py-3 mb-5">
+        <div class="container-fluid">
+
+            <h1 class="fs-2 fw-semibold m-2"> Character Dictionary</h1>
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2 class="fs-1 fw-semibold m-5">Create Character</h2>
+
+        @yield('content')
+    </div>
     </body>
 </html>
